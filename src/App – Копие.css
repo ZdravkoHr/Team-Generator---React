@@ -1,0 +1,476 @@
+/*Import Slabo 27px (headings), Monserrat (cyrilic headings) and Roboto (text) fonts */
+/* @import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto|Slabo+27px&display=swap'); */
+
+:root {
+	--blue: #045fb4;
+	--gray: #1c1c1c;
+}
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: var(--blue);
+	overflow-x: hidden;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	height: 100%;
+}
+
+.root {
+	display: grid;
+	grid-template-columns: 1fr 800px 1fr;
+}
+
+h1 {
+	text-align: center;
+	margin-top: 20px;
+}
+h2 {
+	font-family: 'Slabo 27px', 'Montserrat';
+}
+
+.btn {
+	border: 0;
+	padding: 10px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	cursor: pointer;
+}
+
+.left-flex,
+.right-flex,
+.center-flex {
+	display: flex;
+	height: 100vh;
+	align-items: center;
+	flex: 1;
+}
+.left-flex {
+	justify-content: flex-start;
+}
+.center-flex {
+	justify-content: center;
+	flex: 1.5;
+}
+.right-flex {
+	justify-content: flex-end;
+}
+
+.black-screen,
+.inner-black-screen {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.7);
+	z-index: 10;
+}
+
+.main-box {
+	position: fixed;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 11;
+	background: #fff;
+	top: 40px;
+}
+
+.app-wrapper {
+	flex: 2;
+	align-self: center;
+	background-color: #1c1c1c;
+	color: #fff;
+	padding: 2rem;
+	max-width: 800px;
+}
+.app-wrapper .group {
+	margin: 20px 0;
+}
+.app-wrapper label.input-instruction {
+	display: block;
+	margin: 10px 0;
+}
+.app-wrapper .people-counter {
+	text-align: right;
+	margin-top: 5px;
+}
+.app-wrapper textarea,
+.app-wrapper input {
+	width: 100%;
+	padding: 5px;
+	appearance: textfield;
+}
+.app-wrapper textarea {
+	resize: none;
+	height: 100px;
+}
+.app-wrapper textarea[name='team-names'] {
+	height: 60px;
+}
+
+.app-wrapper button {
+	width: 100%;
+	background-color: #045fb4;
+	color: #fff;
+}
+
+label {
+	display: block;
+	margin: 10px 0;
+}
+input,
+textarea {
+	padding: 5px;
+	border: 0;
+	width: 100%;
+	font-family: sans-serif;
+}
+
+.team-box-top select {
+	background: #1c1c1c;
+	color: #fff;
+	border: 1px solid var(--blue);
+	padding: 5px;
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	background: url('./svgs/drop-down-arrow.svg') no-repeat right;
+	background-size: 25px;
+	background-position-x: 96%;
+}
+.left-menu {
+	text-align: center;
+}
+.menu-item {
+	width: 100%;
+	border: 1px solid #fff;
+	border-left: 0;
+	color: #fff;
+	padding: 10px 30px;
+	margin-bottom: 20px;
+	transition: width.5s;
+}
+.menu-item:hover {
+	width: 120%;
+	transition: width 0.5s cubic-bezier(0, 1.84, 0.95, 2.43);
+}
+
+.notification-box {
+	align-self: flex-end;
+	background: #1c1c1c;
+	color: #fff;
+	padding: 20px;
+	line-height: 1.8rem;
+	transition: transform 0.5s;
+}
+
+.notification-box.fail {
+	color: red;
+}
+
+.notification-box.success {
+	color: #1c6004;
+}
+
+.notification-heading {
+	font-size: 20px;
+}
+.notification-info {
+	font-size: 12px;
+	text-align: center;
+}
+.team-board {
+	width: 80%;
+	padding: 20px;
+	padding-bottom: 70px;
+	display: block;
+	min-height: 180px;
+	overflow: hidden;
+	background: #1c1c1c;
+	color: #fff;
+}
+.names p {
+	display: flex;
+	justify-content: right;
+}
+.names p {
+	margin: 10px 10px 0 0;
+}
+.edit-team-names-box {
+	border: 1px solid var(--blue);
+	width: 60%;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	left: 50%;
+	z-index: 11;
+	background: #1c1c1c;
+}
+.edit-team-names-box {
+	width: 90%;
+	padding: 5px 3em;
+}
+.edit-team-names-box input {
+	border: 1px solid var(--blue);
+	margin-top: 35px;
+	background: transparent;
+	color: #fff;
+}
+.edit-team-names-box button {
+	border: 0;
+	margin: 0 5px;
+	color: #fff;
+	padding: 10px 20px;
+}
+
+.rename-teams-buttons {
+	width: 50%;
+	margin: 20px auto 10px auto;
+	display: flex;
+	justify-content: center;
+}
+.team-board-content {
+	margin: 20px 0 0 -20px;
+	padding: 0 40px;
+	max-height: 350px;
+	overflow-y: auto;
+	width: calc(100% + 60px);
+	border-top: 1px solid var(--blue);
+	border-bottom: 1px solid var(--blue);
+	scroll-behavior: smooth;
+}
+.custom-scrollbar {
+	padding: 5px 10px;
+	position: fixed;
+	bottom: 88.4%;
+	height: 71%;
+	width: 3%;
+	right: 10px;
+	top: 17.5%;
+}
+
+.custom-scrollbar .custom-scroll-up {
+	margin-top: 53px;
+}
+.custom-scrollbar .custom-scroll-down {
+	position: absolute;
+	bottom: 10px;
+}
+
+.information-container .custom-scroll-up {
+	margin-top: 22px;
+}
+.information-container .custom-scrollbar {
+	height: 78%;
+}
+
+.no-teams {
+	text-align: center;
+	padding: 20px;
+}
+.team-board li {
+	margin-left: 30px;
+	line-height: 2;
+}
+.close {
+	position: absolute;
+	right: 18px;
+	top: 20px;
+	font-size: 25px;
+}
+.team-board .team-box-top h2 {
+	text-align: center;
+	font-size: 35px;
+	width: 100%;
+}
+.team-board h2 {
+	margin: 20px 0;
+	display: inline-block;
+}
+.title-edit-icon {
+	position: relative;
+	left: -10px;
+}
+.not-included {
+	margin-left: 10px;
+	padding-bottom: 30px;
+}
+.scroll-status {
+	text-align: center;
+	display: none;
+}
+
+.scroll-status .scroll-text {
+	font-size: 25px;
+	position: relative;
+	top: 10px;
+}
+.hidden-notification {
+	transform: rotateY(-90deg);
+}
+.d-none {
+	display: none;
+}
+.information-container {
+	width: 80%;
+	left: 50%;
+	background: #1c1c1c;
+	color: #fff;
+	overflow: hidden;
+}
+.information-container .information-text {
+	height: 450px;
+	overflow: auto;
+	padding: 0 50px 0 20px;
+	width: calc(100% + 25px);
+	scroll-behavior: smooth;
+}
+.information-container .information-text h4 {
+	margin-top: 10px;
+	padding: 10px 0;
+	font-size: 20px;
+	border-bottom: 1px solid var(--blue);
+}
+.information-container .information-text p {
+	text-align: justify;
+	margin: 10px 0 30px 0;
+}
+.information-container-top {
+	padding: 20px;
+}
+.information-container h2 {
+	font-size: 30px;
+	text-align: center;
+}
+
+@media only screen and (max-width: 920px) {
+	body {
+		display: block;
+	}
+	.left-flex-main-part {
+		align-items: flex-start;
+		justify-content: center;
+		padding: 40px 0;
+		min-height: 10vh;
+	}
+	.center-flex-main-part {
+		min-height: 0;
+		align-items: flex-start;
+	}
+	.app-wrapper {
+		width: 100%;
+	}
+	.left-flex-main-part .menu-item {
+		display: inline-block;
+		border-left: 1px solid #fff;
+	}
+	.left-flex-main-part .menu-item:hover {
+		width: 100%;
+		background: #fff;
+		color: blue;
+	}
+}
+@media only screen and (max-width: 600px) {
+	.main-box {
+		width: 100%;
+	}
+	.information-container .custom-scrollbar {
+		height: 81%;
+	}
+	.information-container .custom-scrollbar .custom-scroll-up {
+		margin-top: 0;
+	}
+}
+@media only screen and (max-width: 469px) {
+	.team-board .custom-scroll-up {
+		margin-top: 102px;
+	}
+	.team-board select {
+		margin-top: 15px;
+		width: 100%;
+	}
+}
+@media only screen and (max-width: 404px) {
+	.information-cointainer .custom-scrollbar {
+		height: 81%;
+	}
+	.information-container .custom-scroll-up {
+		margin-top: 46px;
+	}
+}
+select {
+	background: var(--gray);
+	color: #fff;
+	border: 1px solid var(--blue);
+	appearance: none;
+	-moz-appearance: none;
+	-ms-progress-appearance: none;
+	-webkit-appearance: none;
+}
+
+.list {
+	margin-left: 30px;
+}
+.settings-box {
+	padding: 40px;
+	background: var(--gray);
+	color: #fff;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+.settings-box select {
+	margin: 10px 0;
+	padding: 5px;
+	width: 100%;
+}
+.settings-content {
+	margin-top: 20px;
+}
+.settings-box label {
+	margin: 5px 0;
+}
+.settings-box p {
+	font-weight: bold;
+	margin-top: 30px;
+}
+.settings-box h2 {
+	text-align: center;
+}
+.settings-buttons {
+	margin-top: 25px;
+	display: flex;
+}
+.settings-buttons button {
+	border: 0;
+	flex: 1;
+	padding: 15px;
+	color: #fff;
+}
+.save-button {
+	background: #1c6004;
+}
+.settings-buttons .remember-button {
+	background: #268686;
+}
+.close-button {
+	background: maroon;
+}
+
+.scroll-status .icon i {
+	font-size: 50px;
+	color: var(--blue);
+	line-height: 0;
+	animation: vib 1s infinite;
+}
+
+@media only screen and (max-width: 500px) {
+	.top-0 {
+		top: 0;
+	}
+	.information-container .information-text {
+		height: 525px;
+	}
+}

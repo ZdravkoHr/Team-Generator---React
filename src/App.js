@@ -1,25 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import { useGlobalContext } from './context/';
+import uuid from 'react-uuid';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const { state, menuIcons, openModal } = useGlobalContext();
+
+	return (
+		<>
+			{state.openedModal}
+			<div className='icons-bar'>
+				<div className='menu'>
+					{menuIcons.map(icon => {
+						return (
+							<div
+								className='icon'
+								key={uuid()}
+								onClick={() => openModal(icon.openModal)}
+							>
+								{icon.icon}
+							</div>
+						);
+					})}
+				</div>
+			</div>
+		</>
+	);
 }
 
 export default App;
