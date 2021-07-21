@@ -16,6 +16,7 @@ const AppProvider = ({ children }) => {
 				members: ['Julie', 'Vicky', 'Mark'],
 			},
 		],
+		excluded: [],
 		teamsSortedBy: '',
 		membersSortedBy: '',
 	};

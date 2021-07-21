@@ -50,6 +50,11 @@ function TeamBoardModal() {
 						{state.teams.map((team, index) => (
 							<TeamArticle team={team} index={index} key={uuid()} />
 						))}
+
+						<div className='excluded'>
+							{state.excluded.length > 0 && <h4>{infoText.excluded}</h4>}
+							<p className='members'>{state.excluded.join(', ')}</p>
+						</div>
 					</section>
 				</main>
 			</div>
