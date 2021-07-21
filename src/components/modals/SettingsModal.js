@@ -5,9 +5,13 @@ import './settings.css';
 
 function SettingsModal() {
 	const selectDropdown = useRef();
-	const { text, state, changePlacement } = useGlobalContext();
-	const { title, label, options, saveBtnTxt, closeBtnTxt } =
-		text[state.lang].settings;
+	const { text, state, updateSettings, closeModal } = useGlobalContext();
+	const { title, label, options, closeBtnTxt } = text[state.lang].settings;
+
+	const changeHandler = e => {
+		const newSettings = { ...state.settings, placement: e.target.value };
+		updateSettings(newSettings);
+	};
 
 	return (
 		<div className='overlay'>
@@ -22,6 +26,7 @@ function SettingsModal() {
 					name='placement'
 					id='placement'
 					value={state.settings.placement}
+					onChange={changeHandler}
 				>
 					{options.map(option => {
 						return (
@@ -31,15 +36,10 @@ function SettingsModal() {
 						);
 					})}
 				</select>
-				<p>{state.settings.placement}</p>
 				<div className='buttons'>
-					<button
-						className='save-btn'
-						onClick={() => changePlacement(selectDropdown.value)}
-					>
-						{saveBtnTxt}
+					<button className='close-btn' onClick={closeModal}>
+						{closeBtnTxt}
 					</button>
-					<button className='close-btn'>{closeBtnTxt}</button>
 				</div>
 			</div>
 		</div>

@@ -6,6 +6,14 @@ import text from './text';
 const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
+	const loadSettings = () => {
+		return (
+			JSON.parse(localStorage.getItem('settings')) || {
+				placement: 'inequal',
+			}
+		);
+	};
+
 	const initialState = {
 		openedModal: null,
 		lang: 'bg',
@@ -19,9 +27,7 @@ const AppProvider = ({ children }) => {
 		excluded: [],
 		teamsSortedBy: '',
 		membersSortedBy: '',
-		settings: {
-			placement: 'inequal',
-		},
+		settings: loadSettings(),
 	};
 	const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -45,9 +51,8 @@ const AppProvider = ({ children }) => {
 		dispatch({ type: 'SORT_MEMBERS', payload: value });
 	};
 
-	const changePlacement = value => {
-		console.log(value);
-		dispatch({ type: 'CHANGE_PLACEMENT', payload: value });
+	const updateSettings = value => {
+		dispatch({ type: 'UPDATE_SETTINGS', payload: value });
 	};
 
 	const provide = {
@@ -59,7 +64,7 @@ const AppProvider = ({ children }) => {
 		editTeam,
 		sortTeams,
 		sortMembers,
-		changePlacement,
+		updateSettings,
 	};
 
 	return <AppContext.Provider value={provide}>{children}</AppContext.Provider>;

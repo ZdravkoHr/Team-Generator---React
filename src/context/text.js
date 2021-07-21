@@ -140,7 +140,7 @@ const text = {
 					value: 'excluding',
 				},
 			],
-			saveBtnTxt: 'Запази',
+
 			closeBtnTxt: 'Затвори',
 		},
 	},

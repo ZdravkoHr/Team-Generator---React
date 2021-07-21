@@ -34,10 +34,11 @@ const reducer = (state, { type, payload }) => {
 			}),
 		};
 	}
-	if (type === 'CHANGE_PLACEMENT') {
+	if (type === 'UPDATE_SETTINGS') {
+		localStorage.setItem('settings', JSON.stringify(payload));
 		return {
 			...state,
-			settings: { ...state.settings, placement: payload },
+			settings: payload,
 		};
 	}
 
