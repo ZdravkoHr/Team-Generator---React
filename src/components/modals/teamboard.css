@@ -1,0 +1,64 @@
+.filters {
+	margin-top: 10px;
+}
+
+select {
+	background: transparent;
+	color: #fff;
+	padding: 5px 8px;
+	margin-right: 10px;
+	border-color: var(--blue);
+}
+
+.teamboard {
+	padding-bottom: 20px;
+}
+
+.teamboard .team-name {
+	display: flex;
+}
+
+.teamboard .team-name input {
+	font-size: 1.3rem;
+	background: transparent;
+	border: 0;
+	color: #fff;
+	font-weight: 900;
+	outline: none;
+	width: 100%;
+}
+
+.teamboard .edit-btn,
+.teamboard .confirm-btn {
+	display: block;
+	margin-right: 10px;
+	cursor: pointer;
+	transform: scale(0.9);
+}
+
+.teamboard .edit-btn:hover {
+	transform: scale(1);
+	color: var(--blue);
+}
+
+.teamboard .confirm-btn {
+	color: var(--green);
+}
+
+.teamboard .confirm-btn:hover {
+	transform: scale(1);
+}
+
+.modal-main {
+	border-top: 1px solid var(--blue);
+	border-bottom: 1px solid var(--blue);
+}
+
+.no-teams {
+	text-align: center;
+}
+
+.teamboard ol {
+	font-size: 1rem;
+	line-height: 1.8;
+}

@@ -1,0 +1,30 @@
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal {
+	background-color: var(--gray);
+	color: #fff;
+	width: 90%;
+	max-width: 1200px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.modal-header {
+	padding: 1rem;
+	position: relative;
+}
+
+.modal-header h2 {
+	padding-top: 5px;
+	font-size: 30px;
+	text-align: center;
+}

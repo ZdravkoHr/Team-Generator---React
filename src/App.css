@@ -4,7 +4,13 @@
 :root {
 	--blue: #045fb4;
 	--gray: #1c1c1c;
+	--green: #2b972b;
 }
+
+::selection {
+	color: var(--blue);
+}
+
 *,
 *::before,
 *::after {
@@ -28,8 +34,15 @@ h1 {
 	text-align: center;
 	margin-top: 20px;
 }
-h2 {
-	font-family: 'Slabo 27px', 'Montserrat';
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
 }
 
 .btn {
