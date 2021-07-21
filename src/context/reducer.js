@@ -34,7 +34,14 @@ const reducer = (state, { type, payload }) => {
 			}),
 		};
 	}
-	return state;
+	if (type === 'CHANGE_PLACEMENT') {
+		return {
+			...state,
+			settings: { ...state.settings, placement: payload },
+		};
+	}
+
+	throw new Error('An unknown type of action is provded.');
 };
 
 const comparer = (value, a, b) => {

@@ -19,6 +19,9 @@ const AppProvider = ({ children }) => {
 		excluded: [],
 		teamsSortedBy: '',
 		membersSortedBy: '',
+		settings: {
+			placement: 'inequal',
+		},
 	};
 	const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -42,6 +45,11 @@ const AppProvider = ({ children }) => {
 		dispatch({ type: 'SORT_MEMBERS', payload: value });
 	};
 
+	const changePlacement = value => {
+		console.log(value);
+		dispatch({ type: 'CHANGE_PLACEMENT', payload: value });
+	};
+
 	const provide = {
 		menuIcons,
 		state,
@@ -51,6 +59,7 @@ const AppProvider = ({ children }) => {
 		editTeam,
 		sortTeams,
 		sortMembers,
+		changePlacement,
 	};
 
 	return <AppContext.Provider value={provide}>{children}</AppContext.Provider>;

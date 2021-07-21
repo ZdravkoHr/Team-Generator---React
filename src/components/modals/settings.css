@@ -1,0 +1,53 @@
+.modal.settings {
+	width: 35%;
+	padding: 20px 30px;
+}
+
+.modal.settings h2 {
+	text-align: center;
+}
+
+.setting {
+	margin: 15px 0;
+}
+
+.modal.settings .buttons {
+	margin: 20px 0;
+	display: flex;
+}
+
+.modal.settings button {
+	display: block;
+	outline: none;
+	color: #fff;
+	border: 0;
+	padding: 18px 16px;
+	flex-grow: 1;
+	cursor: pointer;
+	font-size: 16px;
+	letter-spacing: 1.4px;
+}
+
+.modal.settings button:first-child {
+	margin-right: 5px;
+}
+
+.modal.settings .close-btn {
+	background-color: var(--red);
+}
+
+.modal.settings .save-btn {
+	background-color: var(--green);
+}
+
+.modal.settings .save-btn:hover {
+	box-shadow: -1px 1px 5px 1px green;
+}
+
+.modal.settings .close-btn:hover {
+	box-shadow: -1px 1px 5px 1px #c42a2a;
+}
+
+.modal.settings select {
+	width: 100%;
+}

@@ -1,4 +1,4 @@
-.close-btn {
+.modal:not(.settings) .close-btn {
 	position: absolute;
 	top: 15px;
 	right: 15px;
