@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import uuid from 'react-uuid';
 import { useGlobalContext } from 'context';
 
 function TeamArticle({ team, index }) {
 	const [currentName, setCurrentName] = useState(team.name);
 	const [editing, setEditing] = useState(false);
-
 	const { editTeam } = useGlobalContext();
+
+	const input = useRef();
+
+	const startEditing = () => {
+		setEditing(true);
+		input.current.focus();
+	};
 
 	const confirmEdit = () => {
 		if (currentName === '') {
@@ -26,7 +32,7 @@ function TeamArticle({ team, index }) {
 		<article>
 			<h4 className='team-name'>
 				{!editing && (
-					<span className='edit-btn' onClick={() => setEditing(true)}>
+					<span className='edit-btn' onClick={startEditing}>
 						<i className='fas fa-edit'></i>
 					</span>
 				)}
@@ -43,6 +49,7 @@ function TeamArticle({ team, index }) {
 					onChange={e => setCurrentName(e.target.value)}
 					onKeyDown={keyDownHandler}
 					readOnly={!editing}
+					ref={input}
 				/>
 			</h4>
 			<ol>
