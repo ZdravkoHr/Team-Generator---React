@@ -1,0 +1,61 @@
+.generator {
+	background-color: var(--gray);
+	color: #fff;
+	max-width: 600px;
+	padding: 25px;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1;
+}
+
+.generator h2 {
+	text-align: center;
+	font-size: 2rem;
+}
+
+.generator .people-count {
+	text-align: right;
+}
+
+.generator .form-group {
+	margin-top: 20px;
+}
+
+.generator input,
+.generator textarea {
+	width: 100%;
+	display: block;
+	resize: none;
+	border: 0;
+	padding: 5px;
+	font-family: sans-serif;
+	margin: 10px 0;
+	appearance: textfield;
+}
+
+.generator textarea[name='members'] {
+	height: 100px;
+}
+
+.generator textarea[name='count'] {
+	height: 60px;
+}
+
+.generator .generate-btn {
+	width: 100%;
+	color: #fff;
+	background-color: var(--blue);
+	margin: 10px 0;
+	font-size: 1.1rem;
+	letter-spacing: 1px;
+	cursor: pointer;
+}
+
+.generator .generate-btn:hover {
+	opacity: 0.9;
+}
+
+.generator .generate-btn:active {
+	transform: scale(0.95);
+}

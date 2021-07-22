@@ -55,6 +55,14 @@ const AppProvider = ({ children }) => {
 		dispatch({ type: 'UPDATE_SETTINGS', payload: value });
 	};
 
+	const setTeams = teams => {
+		dispatch({ type: 'SET_TEAMS', payload: teams });
+	};
+
+	const setExcluded = excluded => {
+		dispatch({ type: 'SET_EXCLUDED', payload: excluded });
+	};
+
 	const provide = {
 		menuIcons,
 		state,
@@ -65,6 +73,8 @@ const AppProvider = ({ children }) => {
 		sortTeams,
 		sortMembers,
 		updateSettings,
+		setTeams,
+		setExcluded,
 	};
 
 	return <AppContext.Provider value={provide}>{children}</AppContext.Provider>;

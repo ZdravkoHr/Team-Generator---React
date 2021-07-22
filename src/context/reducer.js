@@ -34,6 +34,21 @@ const reducer = (state, { type, payload }) => {
 			}),
 		};
 	}
+
+	if (type === 'SET_TEAMS') {
+		return {
+			...state,
+			teams: payload,
+		};
+	}
+
+	if (type === 'SET_EXCLUDED') {
+		return {
+			...state,
+			excluded: payload,
+		};
+	}
+
 	if (type === 'UPDATE_SETTINGS') {
 		localStorage.setItem('settings', JSON.stringify(payload));
 		return {

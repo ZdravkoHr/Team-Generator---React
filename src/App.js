@@ -2,6 +2,8 @@ import './App.css';
 import { useGlobalContext } from './context/';
 import uuid from 'react-uuid';
 
+import Generator from 'components/Generator';
+
 function App() {
 	const { state, menuIcons, openModal } = useGlobalContext();
 
@@ -23,6 +25,10 @@ function App() {
 					})}
 				</div>
 			</div>
+
+			<main className='main-app'>
+				<Generator />
+			</main>
 		</>
 	);
 }
