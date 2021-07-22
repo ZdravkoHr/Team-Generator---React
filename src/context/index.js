@@ -17,13 +17,7 @@ const AppProvider = ({ children }) => {
 	const initialState = {
 		openedModal: null,
 		lang: 'bg',
-		teams: [
-			{ name: 'Hackers', members: ['John', 'Spectra', 'Alfred'] },
-			{
-				name: 'Dolphins',
-				members: ['Julie', 'Vicky', 'Mark'],
-			},
-		],
+		teams: [],
 		excluded: [],
 		teamsSortedBy: '',
 		membersSortedBy: '',
