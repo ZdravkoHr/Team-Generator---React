@@ -16,11 +16,13 @@ const AppProvider = ({ children }) => {
 		);
 	};
 
+	const language = navigator.language === 'bg' ? 'bg' : 'eng';
+
 	const initialState = {
 		openedModal: null,
 		openedNotification: false,
 		notificationStatus: 'success',
-		lang: 'eng',
+		lang: language,
 		teams: [],
 		excluded: [],
 		teamsSortedBy: '',
