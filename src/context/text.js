@@ -32,9 +32,9 @@ const text = {
 					html: (
 						<p>
 							Това, което приложението прави, е да разделя в отбори хора, чиито
-							имена са предоставени от потребителя, на напълно случаен принцип.
-							Отборите могат да бъдат използвани за разпределение на играчи в
-							някоя игра или по преценка на потребителя.
+							имена са предоставени от потребителя, на случаен принцип. Отборите
+							могат да бъдат използвани за разпределение на играчи в някоя игра
+							или по преценка на потребителя.
 						</p>
 					),
 				},
@@ -44,16 +44,13 @@ const text = {
 						<>
 							<p>
 								За да получите желаните отбори, трябва да въведете имената на
-								хората, разделени със запетаи Разделят се имената на един човек
-								и имената на друг, а не – името, презимето и фамилията на един
-								човек. Например – Иван Петров Георгиев, Георги, Мартин Антонов.
-								и колко отбора желаете да бъдат сформирани. След като сте
-								попълнили нужната информация и цъкнете бутона, ще получите
-								известие в долния десен ъгъл. Ако всичко е наред, натискайки
-								върху известието, ще се отвори т.нар. Team Board, където са
-								Вашите отбори. В противен случай, ще бъдете известен/а, че има
-								проблем. Тогава трябва да проверите предоставената от Вас
-								информация
+								хората, всяко на отделен ред,и колко отбора желаете да бъдат
+								сформирани. По избор може да предоставите и имена за отборите.
+								След като сте попълнили нужната информация и цъкнете бутона, ще
+								получите известие в долния десен ъгъл. Ако всичко е наред, като
+								натиснете върху известието, ще се отвори прозореца с отборите. В
+								противен случай ще бъдете известен/а, че има проблем. Тогава
+								трябва да проверите предоставената от Вас информация.
 							</p>
 							<p>Възможни причини за случване на грешка са:</p>
 							<ul className='list'>
@@ -83,10 +80,11 @@ const text = {
 									информация за приложението – отваря информацията за
 									приложението – информацията, която четете в момента;
 								</li>
-								<li>иконка, която отваря Team Board-а при кликане;</li>
+								<li>иконка, която отваря прозореца с отборите при кликане;</li>
 								<li>
 									насторойки, в които можете да управлявате начина на разделяне
-									на хора по отбори и как ще бъдат показани в Team Board-a.
+									на хора по отбори и как ще бъдат показани в прозореца с
+									отборите.
 								</li>
 							</ol>
 							<p></p>
@@ -94,14 +92,12 @@ const text = {
 					),
 				},
 				{
-					title: 'За приложението',
+					title: 'Техническа информация',
 					html: (
 						<>
 							<p>
-								Приложението е създадено с HTML и е украсено със CSS. Логиката
-								на програмата, както и динамиката, са написани на JavaScript.
-								Приложението се адаптира към различните размери на екраните. Не
-								са използвани допълнителни рамки, библиотеки и т.н.
+								За създаването на приложението са използвани HTML, CSS и
+								JavaScript (React.js)
 							</p>
 						</>
 					),
@@ -142,6 +138,142 @@ const text = {
 			],
 
 			closeBtnTxt: 'Затвори',
+		},
+	},
+	eng: {
+		title: 'Team Generator',
+		peopleField: {
+			label1: 'Write down the names of the members, each on a new line',
+			subLabel1: 'People count: ',
+		},
+		teamsField: {
+			label1: 'How many teams do you want to form?',
+		},
+		teamNamesField: {
+			label1:
+				'In case that you want the teams to have names, write them down here, each on a new line',
+		},
+		btnTxt: 'Generate teams',
+		notification: {
+			success: {
+				mainTxt: 'The teams are formed',
+				secTxt: 'Click here to see them',
+			},
+			fail: {
+				mainTxt: 'Something went wrong!',
+				secTxt: 'Please check again the provided data',
+			},
+		},
+
+		infoBox: {
+			title: 'About this app',
+			articles: [
+				{
+					title: 'What is the purpose of this app?',
+					html: (
+						<p>
+							The app divides people whom names are provided by the user into
+							teams on a random basis.
+						</p>
+					),
+				},
+				{
+					title: 'How does the app work?',
+					html: (
+						<>
+							<p>
+								In order to get the desired teams, you must fill in the names of
+								the members, each on a new line, and also, how many teams do you
+								want to be formed. Optionally, you can provide names for the
+								teams. After you have filled in the necessary information, click
+								the "Generate teams" button. A notification will pop up in the
+								bottom right corner of the screen. If there are no problems, by
+								clicking on the notification, you will open the Team Board.
+								Otherwise, check again the provided information.
+							</p>
+
+							<p>An error may occur if you: </p>
+							<ul className='list'>
+								<li>
+									have submitted the form without filling in all the neccessary
+									fields;
+								</li>
+								<li>
+									are trying to generate an invalid amount of teams - either
+									more than the count of the members or less than 1;
+								</li>
+								<li>
+									have filled in something different than an integer in the
+									filed where you are supposed to let the app knows how many
+									teams do you want to form;
+								</li>
+							</ul>
+							<p></p>
+						</>
+					),
+				},
+				{
+					title: 'Menu',
+					html: (
+						<>
+							<p>In the menu, you will find several options: </p>
+							<ol className='list'>
+								<li>
+									information about the app - opens the information window about
+									the app - the one you are reading right now;
+								</li>
+								<li>an icon which opens the Team Board when clicked;</li>
+								<li>settings about the preffered way to generate teams.</li>
+							</ol>
+							<p></p>
+						</>
+					),
+				},
+				{
+					title: 'Technical info',
+					html: (
+						<>
+							<p>This app is created with HTML, CSS and JS (React.js).</p>
+						</>
+					),
+				},
+			],
+		},
+
+		teamBoard: {
+			title: 'Team Board',
+			sort: {
+				memberLabel: 'Sort the members by: ',
+				options: [
+					{ text: 'alphabetic order (ascending)', value: 'alphabetic+' },
+					{ text: 'alphabetic order (descending)', value: 'alphabetic-' },
+					{ text: 'length of name (ascending)', value: 'length+' },
+					{ text: 'length of name (descending)', value: 'length-' },
+				],
+				defaultTeams: 'Sort the teams by: ',
+				defaultMembers: 'Sort the members by: ',
+			},
+
+			noTeams: 'There are no formed teams yet.',
+			excluded: 'Members not included in a team:  ',
+		},
+
+		settings: {
+			title: 'Settings',
+			label:
+				'If it is impossible for the teams to have an equal count of members:  ',
+			options: [
+				{
+					text: 'some teams will have less members than others',
+					value: 'inequal',
+				},
+				{
+					text: 'do not include some people in the team formation',
+					value: 'excluding',
+				},
+			],
+
+			closeBtnTxt: 'Close',
 		},
 	},
 };

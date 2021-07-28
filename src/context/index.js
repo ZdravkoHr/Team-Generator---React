@@ -20,7 +20,7 @@ const AppProvider = ({ children }) => {
 		openedModal: null,
 		openedNotification: false,
 		notificationStatus: 'success',
-		lang: 'bg',
+		lang: 'eng',
 		teams: [],
 		excluded: [],
 		teamsSortedBy: '',
