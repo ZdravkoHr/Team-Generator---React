@@ -5,6 +5,8 @@ import text from './text';
 
 const AppContext = createContext();
 
+let notificationTimeout;
+
 const AppProvider = ({ children }) => {
 	const loadSettings = () => {
 		return (
@@ -16,6 +18,8 @@ const AppProvider = ({ children }) => {
 
 	const initialState = {
 		openedModal: null,
+		openedNotification: false,
+		notificationStatus: 'success',
 		lang: 'bg',
 		teams: [],
 		excluded: [],
@@ -27,6 +31,20 @@ const AppProvider = ({ children }) => {
 
 	const openModal = modal => {
 		dispatch({ type: 'OPEN_MODAL', payload: modal });
+	};
+
+	const openNotification = status => {
+		dispatch({ type: 'OPEN_NOTIFICATION', payload: status });
+		notificationTimeout && clearTimeout(notificationTimeout);
+
+		notificationTimeout = setTimeout(() => {
+			console.log('closing');
+			closeNotification();
+		}, 3000);
+	};
+
+	const closeNotification = () => {
+		dispatch({ type: 'CLOSE_NOTIFICATION' });
 	};
 
 	const closeModal = () => {
@@ -62,6 +80,8 @@ const AppProvider = ({ children }) => {
 		state,
 		text,
 		openModal,
+		openNotification,
+		closeNotification,
 		closeModal,
 		editTeam,
 		sortTeams,

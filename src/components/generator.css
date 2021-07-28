@@ -38,8 +38,9 @@
 	height: 100px;
 }
 
-.generator textarea[name='count'] {
-	height: 60px;
+.generator input#count:invalid {
+	border: 1px solid red;
+	outline: none;
 }
 
 .generator .generate-btn {

@@ -1,6 +1,6 @@
 const text = {
 	bg: {
-		title: 'Генератор за отбори',
+		title: 'Генератор на отбори',
 		peopleField: {
 			label1: 'Въведете имената на хората, всяко на нов ред:',
 			subLabel1: 'Брой хора: ',
@@ -13,7 +13,7 @@ const text = {
 				'Ако искате отборите да имат имена, напишете ги тук, всяко на нов ред:',
 		},
 		btnTxt: 'Генерирай отборите',
-		alert: {
+		notification: {
 			success: {
 				mainTxt: 'Отборите са сформирани',
 				secTxt: 'Кликнете, за да ги видите',
@@ -114,8 +114,8 @@ const text = {
 			sort: {
 				memberLabel: 'Подреди членовете по:',
 				options: [
-					{ text: 'азбучен/цифрен ред (възходящо)', value: 'alphabetic+' },
-					{ text: 'азбучен/цифрен ред (низходящо)', value: 'alphabetic-' },
+					{ text: 'азбучен ред (възходящо)', value: 'alphabetic+' },
+					{ text: 'азбучен ред (низходящо)', value: 'alphabetic-' },
 					{ text: 'дължина на името (възходящо)', value: 'length+' },
 					{ text: 'дължина на името (низходящо)', value: 'length-' },
 				],

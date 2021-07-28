@@ -4,7 +4,8 @@ import './generator.css';
 import generateTeams from 'generateTeams';
 
 function Generator() {
-	const { state, text, setTeams, setExcluded } = useGlobalContext();
+	const { state, text, setTeams, setExcluded, openNotification } =
+		useGlobalContext();
 	const info = text[state.lang];
 
 	const [members, setMembers] = useState([]);
@@ -23,14 +24,19 @@ function Generator() {
 
 	const submitHandler = e => {
 		e.preventDefault();
-		const [teams, excluded] = generateTeams({
-			members,
-			teamsCount,
-			teamsNames,
-			allowOdd: state.settings.placement === 'inequal',
-		});
-		setTeams(teams);
-		setExcluded(excluded);
+		try {
+			const [teams, excluded] = generateTeams({
+				members,
+				teamsCount,
+				teamsNames,
+				allowOdd: state.settings.placement === 'inequal',
+			});
+			setTeams(teams);
+			setExcluded(excluded);
+			openNotification('success');
+		} catch (e) {
+			openNotification('fail');
+		}
 	};
 
 	return (

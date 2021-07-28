@@ -3,6 +3,7 @@ import { useGlobalContext } from './context/';
 import uuid from 'react-uuid';
 
 import Generator from 'components/Generator';
+import Notification from 'components/Notification';
 
 function App() {
 	const { state, menuIcons, openModal } = useGlobalContext();
@@ -29,6 +30,8 @@ function App() {
 			<main className='main-app'>
 				<Generator />
 			</main>
+
+			<Notification></Notification>
 		</>
 	);
 }

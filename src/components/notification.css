@@ -1,0 +1,33 @@
+*[class^='notification'] {
+	background-color: var(--gray);
+	position: fixed;
+	display: block;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+	padding: 30px 12px;
+	cursor: pointer;
+	transform: translateY(100%);
+	transition: 0.5s;
+}
+
+*[class^='notification'].opened {
+	transform: translateY(0);
+}
+
+*[class^='notification'] h4 {
+	font-size: 16px;
+}
+
+*[class^='notification'] p {
+	font-size: 12px;
+	margin-top: 4px;
+}
+
+.notification-success {
+	color: var(--green);
+}
+
+.notification-fail {
+	color: var(--red);
+}

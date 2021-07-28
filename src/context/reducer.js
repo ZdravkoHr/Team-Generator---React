@@ -2,6 +2,15 @@ const reducer = (state, { type, payload }) => {
 	if (type === 'OPEN_MODAL') {
 		return { ...state, openedModal: payload };
 	}
+
+	if (type === 'OPEN_NOTIFICATION') {
+		return { ...state, openedNotification: true, notificationStatus: payload };
+	}
+
+	if (type === 'CLOSE_NOTIFICATION') {
+		return { ...state, openedNotification: false };
+	}
+
 	if (type === 'CLOSE_MODAL') {
 		return { ...state, openedModal: null };
 	}
