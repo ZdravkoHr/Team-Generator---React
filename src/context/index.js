@@ -16,8 +16,8 @@ const AppProvider = ({ children }) => {
 		);
 	};
 
-	const language = navigator.language === 'bg' ? 'bg' : 'eng';
-
+	let language = navigator.language === 'bg' ? 'bg' : 'eng';
+	language = 'eng';
 	const initialState = {
 		openedModal: null,
 		openedNotification: false,
