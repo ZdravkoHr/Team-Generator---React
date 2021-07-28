@@ -62,3 +62,10 @@ select {
 	font-size: 1rem;
 	line-height: 1.8;
 }
+
+@media (max-width: 569px) {
+	select {
+		width: 100%;
+		margin: 7px 0;
+	}
+}

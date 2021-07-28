@@ -9,6 +9,7 @@
 	cursor: pointer;
 	transform: translateY(100%);
 	transition: 0.5s;
+	z-index: 99999;
 }
 
 *[class^='notification'].opened {

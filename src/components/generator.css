@@ -1,11 +1,10 @@
 .generator {
 	background-color: var(--gray);
 	color: #fff;
+	width: 80%;
 	max-width: 600px;
+	margin: 30px 0;
 	padding: 25px;
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
 	z-index: 1;
 }
 

@@ -9,8 +9,10 @@
 }
 
 .main-app {
+	min-height: 100vh;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 }
 
 ::selection {
@@ -28,12 +30,6 @@ body {
 	background: var(--blue);
 	overflow-x: hidden;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-#root {
-	display: grid;
-	grid-template-columns: 1fr 3fr;
-	height: 100vh;
 }
 
 h1 {
@@ -61,6 +57,10 @@ h6 {
 .icons-bar {
 	display: flex;
 	align-items: center;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
 }
 
 .icons-bar .icon {
@@ -78,4 +78,27 @@ h6 {
 .icons-bar .icon:hover {
 	width: 120%;
 	transition: width 0.5s cubic-bezier(0, 1.84, 0.95, 2.43);
+}
+
+@media (max-width: 800px) {
+	html {
+		font-size: 14px;
+	}
+
+	.icons-bar {
+		left: 50%;
+		transform: translateX(-50%);
+		top: 10%;
+		width: 80%;
+		max-width: 600px;
+	}
+
+	.icons-bar .menu {
+		display: flex;
+		width: 100%;
+	}
+
+	.icons-bar .menu > *:first-child {
+		border-left: 1px solid #fff;
+	}
 }
