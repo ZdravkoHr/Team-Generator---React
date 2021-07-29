@@ -40,7 +40,6 @@ const AppProvider = ({ children }) => {
 		notificationTimeout && clearTimeout(notificationTimeout);
 
 		notificationTimeout = setTimeout(() => {
-			console.log('closing');
 			closeNotification();
 		}, 3000);
 	};

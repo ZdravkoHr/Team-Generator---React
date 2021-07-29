@@ -5,6 +5,7 @@ const isInvalid = (count, peopleCount) => {
 };
 
 function createTeams({ members, teamsCount, teamsNames, allowOdd }) {
+	console.log(arguments);
 	members = members.map(i => i.trim()).filter(Boolean);
 	const membersCopy = [...members];
 	const membersCount = members.length;
@@ -19,8 +20,9 @@ function createTeams({ members, teamsCount, teamsNames, allowOdd }) {
 	}
 
 	let teamIndex = 0;
-	const stopIndex =
-		allowOdd === 'true' ? null : membersCount - (membersCount % teamsCount);
+	const stopIndex = allowOdd
+		? null
+		: membersCount - (membersCount % teamsCount);
 
 	members.forEach((_, index) => {
 		if (index === stopIndex) return;
