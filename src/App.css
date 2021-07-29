@@ -85,10 +85,15 @@ h6 {
 		font-size: 14px;
 	}
 
+	.main-app {
+		min-height: auto;
+	}
+
 	.icons-bar {
+		position: relative;
 		left: 50%;
 		transform: translateX(-50%);
-		top: 10%;
+		margin-top: 40px;
 		width: 80%;
 		max-width: 600px;
 	}
@@ -100,5 +105,9 @@ h6 {
 
 	.icons-bar .menu > *:first-child {
 		border-left: 1px solid #fff;
+	}
+
+	.icons-bar .menu > * {
+		margin-bottom: 0;
 	}
 }
